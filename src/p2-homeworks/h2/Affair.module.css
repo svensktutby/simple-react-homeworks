@@ -1,0 +1,35 @@
+.affair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #eee;
+}
+
+.btn {
+  padding: 3px 8px;
+  color: #333;
+  border: 0;
+  border-radius: 3px;
+  font-size: 1em;
+  cursor: pointer;
+  user-select: none;
+  transition-property: color, background-color;
+  transition-duration: 0.3s;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btnClose {
+  background-color: transparent;
+  color: #333;
+}
+
+
+.btnClose:hover,
+.btnClose:focus {
+  color: #fff;
+  background-color: palevioletred;
+}

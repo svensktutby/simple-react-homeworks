@@ -1,3 +1,65 @@
-.someClass {
+.affairs {
+  width: 250px;
+  margin: 20px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
 
+.affairsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.affairsList li {
+  transition: background-color 0.3s;
+}
+
+.affairsList li:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.affairsList li:hover {
+  background-color: gainsboro;
+}
+
+.priorities {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.btn {
+  padding: 5px 10px;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #333;
+}
+
+.btnAll {
+  background-color: lightslategray;
+}
+
+.btnHigh {
+  background-color: indianred;
+}
+
+.btnMiddle {
+  background-color: yellowgreen;
+}
+
+.btnLow {
+  background-color: cornflowerblue;
 }

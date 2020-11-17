@@ -1,14 +1,18 @@
 import React from "react";
 import Affair from "./Affair";
-import {AffairType} from "./HW2";
+import { AffairType, FilterType } from './HW2';
+
+import classes from './Affairs.module.css';
 
 type AffairsPropsType = { // need to fix any
-    data: any
-    setFilter: any
-    deleteAffairCallback: any
+    data: Array<AffairType>
+    setFilter: (priority: FilterType) => void;
+    deleteAffairCallback: (_id: number) => void;
 }
 
 function Affairs(props: AffairsPropsType) {
+  const { affairs, affairsList, priorities, btn, btnAll, btnHigh, btnMiddle, btnLow } = classes;
+
     const mappedAffairs = props.data.map((a: AffairType) => (
         <Affair // should work
             key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
@@ -17,20 +21,24 @@ function Affairs(props: AffairsPropsType) {
         />
     ))
 
-    const setAll = () => {}; // need to fix
-    const setHigh = () => {};
-    const setMiddle = () => {};
-    const setLow = () => {};
+    const setAll = () => {props.setFilter('all')}; // need to fix
+    const setHigh = () => {props.setFilter('high')};
+    const setMiddle = () => {props.setFilter('middle')};
+    const setLow = () => {props.setFilter('low')};
 
     return (
-        <div>
+        <div className={affairs}>
 
+          <ul className={affairsList}>
             {mappedAffairs}
+          </ul>
 
-            <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
+          <div className={priorities}>
+            <button className={`${btn} ${btnAll}`} onClick={setAll}>All</button>
+            <button className={`${btn} ${btnHigh}`} onClick={setHigh}>High</button>
+            <button className={`${btn} ${btnMiddle}`} onClick={setMiddle}>Middle</button>
+            <button className={`${btn} ${btnLow}`} onClick={setLow}>Low</button>
+          </div>
         </div>
     );
 }
