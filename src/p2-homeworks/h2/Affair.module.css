@@ -4,10 +4,11 @@
   align-items: center;
   padding: 10px 20px;
   background-color: #eee;
+  cursor: pointer;
 }
 
 .btn {
-  padding: 3px 8px;
+  padding: 3px 0 3px 8px;
   color: #333;
   border: 0;
   border-radius: 3px;
@@ -28,8 +29,19 @@
 }
 
 
-.btnClose:hover,
-.btnClose:focus {
-  color: #fff;
-  background-color: palevioletred;
+/*.btnClose:hover,*/
+/*.btnClose:focus {*/
+/*  color: #fff;*/
+/*  background-color: palevioletred;*/
+/*}*/
+
+.icon {
+  fill: #333;
+  transition-property: fill;
+  transition-duration: 0.3s;
+}
+
+.btnClose:hover .icon,
+.btnClose:focus .icon {
+  fill: palevioletred;
 }
