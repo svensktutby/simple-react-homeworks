@@ -1,7 +1,79 @@
-.someClass {
-
+.bg {
+  background-color: #6fb8eb;
+  background-image: linear-gradient(230deg,#caeaf6,#a0eaf1 46%,#6fb8eb);
 }
 
-.error {
-    border: 1px solid red;
+.usersBlock {
+  position: relative;
+  max-width: 700px;
+  min-width: 350px;
+  margin: 0 auto;
+  padding: 40px 40px 20px;
+  color: #fff;
+}
+
+.errorMessage {
+  position: absolute;
+  left: 50px;
+  top: 15px;
+  color: #df627d;
+}
+
+.inputWrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.usersBlock input {
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  font-size: 16px;
+  transition-property: border-color;
+  transition-duration: 0.3s;
+}
+
+.usersBlock input.error {
+  border-color: #df627d;
+}
+
+.usersBlock input:focus {
+  outline: none;
+}
+
+.usersBlock input:hover,
+.usersBlock input:focus {
+  border-color: #6fb8eb;
+}
+
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background-color: #df627d;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.addBtn:focus {
+  outline: none;
+}
+
+.addBtn:hover,
+.addBtn:focus {
+  background-color: #ff8a95;
+}
+
+.totalUsers {
+  display: block;
+  padding: 5px 10px;
+  font-size: 22px;
 }
