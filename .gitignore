@@ -21,6 +21,7 @@
 
 .prettierrc
 .prettierignore
+.csscomb.json
 
 npm-debug.log*
 yarn-debug.log*

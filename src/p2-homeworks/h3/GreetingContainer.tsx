@@ -18,6 +18,7 @@ const GreetingContainer: FC<GreetingContainerPropsType> = ({ users, addUserCallb
   const [error, setError] = useState<boolean>(false); // need to fix any
 
   const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
+    setError(false);
     const userName = e.currentTarget.value.trim();
     setName(userName); // need to fix
   };
@@ -25,7 +26,6 @@ const GreetingContainer: FC<GreetingContainerPropsType> = ({ users, addUserCallb
     if (name) {
       addUserCallback(name);
       alert(`Hello ${name}!`); // need to fix
-      setError(false);
       setName('');
     } else {
       setError(true);
