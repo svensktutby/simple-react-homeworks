@@ -11,27 +11,28 @@ button:not(:disabled) {
 }
 
 .usersBlock {
-  position: relative;
-
   min-width: 350px;
   max-width: 700px;
   margin: 0 auto;
-  padding: 40px 40px 20px;
+  padding: 30px 10px 20px;
 
   color: #fff;
 }
 
-.errorMessage {
-  position: absolute;
-  top: 15px;
-  left: 50px;
+.inputWrapper {
+  position: relative;
 
-  color: #df627d;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
-.inputWrapper {
-  display: flex;
-  margin-bottom: 20px;
+.errorMessage {
+  position: absolute;
+  top: 0;
+  left: 10px;
+
+  color: #df627d;
 }
 
 .usersBlock input {

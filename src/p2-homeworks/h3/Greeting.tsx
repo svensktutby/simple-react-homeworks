@@ -18,8 +18,8 @@ const Greeting: FC<GreetingPropsType> = (
   return (
     <div className={s.bg}>
       <div className={s.usersBlock}>
-        <span className={s.errorMessage}>{error && 'Username should not be empty!'}</span>
         <div className={s.inputWrapper}>
+          <span className={s.errorMessage}>{error && 'Username should not be empty!'}</span>
           <input value={name} onChange={setNameCallback} className={inputClass} placeholder="Write here..." />
           <button className={s.addBtn} onClick={addUser}>
             Add
