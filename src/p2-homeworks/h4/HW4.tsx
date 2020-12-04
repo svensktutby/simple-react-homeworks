@@ -1,8 +1,8 @@
 import React, {ChangeEvent, useState} from "react";
 import SuperInputText from "./common/c1-SuperInputText/SuperInputText";
-import s from "./HW4.module.css";
 import SuperButton from "./common/c2-SuperButton/SuperButton";
 import SuperCheckbox from "./common/c3-SuperCheckbox/SuperCheckbox";
+import s from "./HW4.module.css";
 
 function HW4() {
     const [text, setText] = useState<string>("");
@@ -12,6 +12,7 @@ function HW4() {
             alert("введите текст...");
         } else {
             alert(text); // если нет ошибки показать текст
+            setText('');
         }
     }
 
@@ -30,7 +31,7 @@ function HW4() {
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                    // className={s.blue} // проверьте, рабоет ли смешивание классов
+                    // className={s.blue} // проверьте, рабоет ли смешивание классовisInvalid
                 />
 
                 {/*should work (должно работать)*/}

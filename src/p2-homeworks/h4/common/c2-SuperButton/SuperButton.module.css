@@ -1,7 +1,59 @@
-.default {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
 
+button {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 6px 12px;
+
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, border-color, box-shadow;
+
+  user-select: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.default {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.default:hover:not(:disabled),
+.default:focus {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.default:focus {
+  box-shadow: 0 0 0 2px rgba(38,143,255,0.5);
 }
 
 .red {
-    background: red;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.red:hover:not(:disabled),
+.red:focus {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.red:focus {
+  box-shadow: 0 0 0 2px rgba(225,83,97,0.5);
 }
