@@ -28,6 +28,10 @@ button:focus {
   outline: none;
 }
 
+button svg {
+  fill: #fff;
+}
+
 .default {
   background-color: #007bff;
   border-color: #007bff;

@@ -23,67 +23,27 @@
 }
 
 .priorities {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
   padding: 20px;
 }
 
-.btn {
-  width: 22%;
-  padding: 5px 10px;
-  color: #333;
-  border: 1px solid transparent;
-  background-color: transparent;
-  border-radius: 3px;
-  text-align: center;
-  cursor: pointer;
-  user-select: none;
-  transition-property: color, background-color, border-color;
-  transition-duration: 0.3s;
+.priorities button {
+  width: 25%;
 }
 
-.btn:focus {
-  outline: none;
+.buttonsGroup {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
 }
 
-.btn:hover,
-.btn:focus {
-  color: #fff;
+.buttonsGroup > button:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.btnAll {
-  border-color: lightslategray;
-}
-
-.btnHigh {
-  border-color: indianred;
-}
-
-.btnMiddle {
-  border-color: yellowgreen;
-}
-
-.btnLow {
-  border-color: cornflowerblue;
-}
-
-.btnAll:hover,
-.btnAll:focus {
-  background-color: lightslategray;
-}
-
-.btnHigh:hover,
-.btnHigh:focus {
-  background-color: indianred;
-}
-
-.btnMiddle:hover,
-.btnMiddle:focus {
-  background-color: yellowgreen;
-}
-
-.btnLow:hover,
-.btnLow:focus {
-  background-color: cornflowerblue;
+.buttonsGroup > button:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }

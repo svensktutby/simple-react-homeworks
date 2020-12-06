@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import Greeting from './Greeting';
 import { UserType } from './HW3';
 
@@ -17,10 +17,10 @@ const GreetingContainer: FC<GreetingContainerPropsType> = ({ users, addUserCallb
   const [name, setName] = useState<string>(''); // need to fix any
   const [error, setError] = useState<boolean>(false); // need to fix any
 
-  const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
+  const setNameCallback = (name: string) => {
+    // need to fix any
     setError(false);
-    const userName = e.currentTarget.value.trim();
-    setName(userName); // need to fix
+    setName(name); // need to fix
   };
   const addUser = () => {
     if (name) {

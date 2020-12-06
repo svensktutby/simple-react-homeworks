@@ -10,7 +10,7 @@ button:not(:disabled) {
   background-image: linear-gradient(230deg,#caeaf6,#a0eaf1 46%,#6fb8eb);
 }
 
-.usersBlock {
+.greetingBlock {
   min-width: 350px;
   max-width: 700px;
   margin: 0 auto;
@@ -19,72 +19,27 @@ button:not(:disabled) {
   color: #fff;
 }
 
-.inputWrapper {
+.greetingWrapper {
   position: relative;
 
   display: flex;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  align-items: flex-end;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
-.errorMessage {
-  position: absolute;
-  top: 0;
-  left: 10px;
-
-  color: #df627d;
+.greetingWrapper button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.usersBlock input {
-  width: 75%;
-  margin: 0;
-  padding: 10px;
-
-  font-size: 16px;
-
-  border: 1px solid transparent;
-  border-radius: 0;
-
-  transition-duration: 0.3s;
-  transition-property: border-color;
+.greetingWrapper input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-.usersBlock input:focus {
-  outline: none;
-}
-
-.usersBlock input:focus {
-  border-color: #6fb8eb;
-}
-
-.usersBlock input.error {
-  border-color: #df627d;
-}
-
-.addBtn {
-  width: 25%;
-  padding: 10px;
-
-  font-size: 16px;
-  text-align: center;
-  color: #fff;
-
-  background-color: #df627d;
-  border: 1px solid transparent;
-  border-radius: 0;
-
-  transition: 0.3s;
-  transition-duration: 0.3s;
-  transition-property: background-color;
-}
-
-.addBtn:focus {
-  outline: none;
-}
-
-.addBtn:hover:not(:disabled),
-.addBtn:focus {
-  background-color: #ff8a95;
+.greetingWrapper button {
+  height: calc(1.5em + 0.75rem + 2px);
 }
 
 .totalUsers {
