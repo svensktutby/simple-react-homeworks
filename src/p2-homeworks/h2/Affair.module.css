@@ -1,23 +1,30 @@
 .affair {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   padding: 10px 20px;
+
   background-color: #eee;
   cursor: pointer;
 }
 
-.affair .btnClose,
-.affair .btnClose:hover,
-.affair .btnClose:focus {
-  box-shadow: none;
+.affair .btnClose {
+  margin-left: auto;
+  padding-right: 0;
+
   background-color: transparent;
   border: 0;
-  margin-left: auto;
+}
+
+.affair .btnClose:hover,
+.affair .btnClose:focus {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .btnClose svg {
   fill: #333;
+
   transition: fill 0.3s;
 }
 
