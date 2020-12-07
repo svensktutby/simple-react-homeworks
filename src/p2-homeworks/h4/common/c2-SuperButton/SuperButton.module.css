@@ -1,11 +1,4 @@
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-  cursor: pointer;
-}
-
-button {
+.btn {
   box-sizing: border-box;
   display: inline-block;
   padding: 6px 12px;
@@ -24,11 +17,11 @@ button {
   user-select: none;
 }
 
-button:focus {
+.btn:focus {
   outline: none;
 }
 
-button svg {
+.btn svg {
   fill: #fff;
 }
 

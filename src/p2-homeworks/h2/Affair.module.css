@@ -16,12 +16,12 @@
   margin-left: auto;
 }
 
-button svg {
+.btnClose svg {
   fill: #333;
   transition: fill 0.3s;
 }
 
-button:hover svg,
-button:focus svg {
+.btnClose:hover svg,
+.btnClose:focus svg {
   fill: palevioletred;
 }

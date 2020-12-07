@@ -1,19 +1,17 @@
-input[type=checkbox] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
 .checkboxWrapper {
   position: relative;
 
   display: block;
   padding-left: 1.25rem;
 }
+
 .checkbox {
   position: absolute;
 
+  box-sizing: border-box;
   margin-top: 0.4rem;
   margin-left: -1.25rem;
+  padding: 0;
 }
 
 .spanClassName {
