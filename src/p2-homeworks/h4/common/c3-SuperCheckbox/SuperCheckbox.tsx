@@ -35,7 +35,7 @@ const SuperCheckbox: FC<SuperCheckboxPropsType> = ({
         className={finalInputClassName}
         {...restProps} // отдаём инпуту остальные пропсы если они есть (checked например там внутри)
       />
-      {children && <span className={s.spanClassName}>{children}</span>}
+      {children && <span className={s.info}>{children}</span>}
     </label> // благодаря label нажатие на спан передастся в инпут
   );
 };

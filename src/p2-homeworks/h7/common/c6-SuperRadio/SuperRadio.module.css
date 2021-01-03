@@ -1,8 +1,8 @@
-.checkboxWrapper {
+.radioWrapper {
   composes: radioCheckboxWrapper from "../../../../index.css";
 }
 
-.checkbox {
+.radio {
   composes: radioCheckboxInput from "../../../../index.css";
 }
 

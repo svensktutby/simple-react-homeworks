@@ -1,0 +1,3 @@
+.wrapper {
+  composes: wrapperBlock from "../../index.css";
+}
