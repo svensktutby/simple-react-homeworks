@@ -1,0 +1,16 @@
+.wrapper {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.actions {
+  composes: btnGroup from "../../index.css";
+
+  display: block;
+}
+
+.actions button {
+  width: 50%;
+}
+

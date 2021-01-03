@@ -13,7 +13,7 @@ function Error404() {
       </div>
       <footer className={s.footer}>
         <div className={s.footerText}>
-          Take me back to:{' '}
+          Take me back to:&nbsp;
           <Link className={s.link} to="/">
             home page
           </Link>

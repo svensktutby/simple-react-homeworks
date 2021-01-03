@@ -13,7 +13,7 @@ type AffairsPropsType = {
 };
 
 function Affairs(props: AffairsPropsType) {
-  const { affairs, affairsList, priorities, buttonsGroup } = classes;
+  const { affairs, affairsList, priorities } = classes;
 
   const mappedAffairs = props.data.map((a: AffairType) => (
     <Affair // should work
@@ -40,7 +40,7 @@ function Affairs(props: AffairsPropsType) {
     <div className={affairs}>
       <ul className={affairsList}>{mappedAffairs}</ul>
 
-      <div className={`${priorities} ${buttonsGroup}`}>
+      <div className={`${priorities}`}>
         <SuperButton onClick={setAll}>All</SuperButton>
         <SuperButton onClick={setHigh}>High</SuperButton>
         <SuperButton onClick={setMiddle}>Middle</SuperButton>
