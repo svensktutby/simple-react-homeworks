@@ -1,0 +1,7 @@
+.wrapper {
+  composes: wrapperBlock from "../../index.css";
+}
+
+.actions {
+  composes: btnGroup from "../../index.css";
+}
