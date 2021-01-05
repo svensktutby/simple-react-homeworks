@@ -1,0 +1,8 @@
+.taskWrapper {
+  background-color: #87d7cc;
+  color: #2c888d;
+}
+
+.wrapper {
+  composes: wrapperBlock from "../../index.css";
+}

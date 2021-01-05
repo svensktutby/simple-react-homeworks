@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+
+.clock {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time,
+.date {
+  font-family: "Major Mono Display", monospace;
+
+  cursor: default;
+
+  user-select: none;
+}
+
+.time {
+  margin-bottom: 48px;
+
+  font-size: 40px;
+  text-align: center;
+  color: #1f6e72;
+}
+
+.date {
+  position: absolute;
+  top: 50px;
+
+  font-size: 30px;
+  text-align: center;
+  color: #49b2b8;
+}
+
+.actions {
+  composes: btnGroup from "../../index.css";
+}
+
+.actions button {
+  padding: 12px 24px;
+
+  font-size: 18px;
+  color: #878b32;
+
+  background-color: #f7fca0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clock .actions button:hover,
+.clock .actions button:focus {
+  background-color: #f5f8ca;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
