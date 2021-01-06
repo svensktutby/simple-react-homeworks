@@ -1,0 +1,15 @@
+.taskWrapper {
+  color: #fff;
+
+  background-color: teal;
+  background-image: linear-gradient(to right, silver, teal);
+}
+
+.wrapper {
+  composes: wrapperBlock from "../../index.css";
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16.4433617vh;
+}
