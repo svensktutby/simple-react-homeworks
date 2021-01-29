@@ -44,7 +44,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
             onChange={onChangeCallback}
             className={finalInputClassName}
           />
-          {o && <span className={s.info}>{o}</span>}
+          <span className={s.info}>{o}</span>
         </label>
       ))
     : [];

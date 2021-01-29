@@ -1,11 +1,57 @@
 .radioWrapper {
-  composes: radioCheckboxWrapper from "../../../../index.css";
+  composes: controlWrapper from "../../../../index.css";
 }
 
 .radio {
-  composes: radioCheckboxInput from "../../../../index.css";
+  composes: controlInput from "../../../../index.css";
 }
 
 .info {
-  composes: radioCheckboxInfo from "../../../../index.css";
+  composes: controlInfo from "../../../../index.css";
+}
+
+.info::before,
+.info::after {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: -1.5rem;
+
+  width: 1rem;
+  height: 1rem;
+}
+
+.info::before {
+  background-color: #fff;
+  border: #adb5bd solid 1px;
+  border-radius: 50%;
+
+  transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+
+  pointer-events: none;
+}
+
+.info::after {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.info:focus:not(:checked) ~ .info::before {
+  border-color: #80bdff;
+}
+
+.radio:checked ~ .info::before {
+  color: #fff;
+
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.radio:focus ~ .info::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.radio:checked ~ .info::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }

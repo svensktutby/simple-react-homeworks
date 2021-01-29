@@ -1,3 +1,9 @@
+html {
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -5,23 +11,48 @@
 }
 
 body {
-  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  color: #333;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+svg {
+  fill: currentColor;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+
+  font-size: 100%;
+  line-height: 1.15;
+  font-family: inherit;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  -webkit-appearance: none; /* fix safari inputs shadow */
 }
 
 [type=button]:not(:disabled),
@@ -31,22 +62,12 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
 .btnGroup {
   display: inline-flex;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+
   vertical-align: middle;
-  margin-top: .25rem;
-  margin-bottom: .25rem;
 }
 
 .btnGroup > button:not(:first-child) {
@@ -59,28 +80,32 @@ textarea {
   border-bottom-right-radius: 0;
 }
 
-.radioCheckboxWrapper {
+.controlWrapper {
   position: relative;
 
   display: inline-block;
-  padding-left: 1.25rem;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
 }
 
-.radioCheckboxInput {
+.controlInput {
   position: absolute;
+  z-index: -1;
 
   box-sizing: border-box;
-  margin-top: 0.4rem;
-  margin-left: -1.25rem;
-  padding: 0;
+
+  opacity: 0;
 }
 
-.radioCheckboxInfo {
+.controlInfo {
+  position: relative;
+
   display: inline-block;
   margin-bottom: 0;
 
   font-size: 1rem;
   line-height: 1.5;
+  vertical-align: top;
 }
 
 .wrapperBlock {
