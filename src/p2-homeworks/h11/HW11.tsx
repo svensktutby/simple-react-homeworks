@@ -17,31 +17,38 @@ function HW11() {
             homeworks 11
 
             {/*should work (должно работать)*/}
-          <div className={s.wrapper}>
-            <div>
-              <SuperRange
-                // сделать так чтоб value1 изменялось
-                value={value1}
-                onChangeRange={setValue1}
-                min={MIN_VALUE}
-                max={MAX_VALUE}
-              />
+            <div className={s.wrapper}>
+                <div>
+                    <SuperRange
+                        // сделать так чтоб value1 изменялось
+                        onChangeRange={setValue1}
+                        value={value1}
+                        min={MIN_VALUE}
+                        max={MAX_VALUE}
+                    />
+                </div>
+
+                <div className={s.superDoubleRangeWrapper}>
+                    <span className={s.rangeValue}>{value1}</span>
+                    <SuperDoubleRange
+                        // сделать так чтоб value1 и value2 изменялось
+                        onChangeRange={([val1, val2]) => {
+                            setValue1(val1);
+                            setValue2(val2);
+                        }}
+                        value={[value1, value2]}
+                        min={MIN_VALUE}
+                        max={MAX_VALUE}
+                    />
+                    <span className={s.rangeValue}>{value2}</span>
+                </div>
             </div>
 
-            <div>
-              <span>{value1}</span>
-              <SuperDoubleRange
-                // сделать так чтоб value1 и value2 изменялось
-              />
-              <span>{value2}</span>
-            </div>
-          </div>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperRange/>*/}
-            {/*<AlternativeSuperDoubleRange/>*/}
-            <hr/>
+              <hr/>
+              {/*для личного творчества, могу проверить*/}
+              {/*<AlternativeSuperRange/>*/}
+              {/*<AlternativeSuperDoubleRange/>*/}
+              <hr/>
         </div>
     );
 }

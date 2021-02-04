@@ -1,3 +1,63 @@
 .wrapper {
   composes: wrapperBlock from "../../index.css";
+
+  max-width: 600px;
+  padding-right: 85px;
+  padding-left: 85px;
+}
+
+.superDoubleRangeWrapper {
+  position: relative;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.rangeValue {
+  position: absolute;
+  top: 12px;
+
+  display: inline-block;
+  width: 60px;
+  margin-left: 8px;
+  padding: 5px 10px;
+
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+
+  background: #007bff;
+  border-radius: 3px;
+}
+
+.rangeValue:first-child {
+  left: -90px;
+}
+
+.rangeValue:last-child {
+  right: -80px;
+}
+
+.rangeValue::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+.rangeValue:first-child::after {
+  right: -7px;
+
+  border-left: 7px solid #007bff;
+}
+
+.rangeValue:last-child::after {
+  left: -7px;
+
+  border-right: 7px solid #007bff;
 }
