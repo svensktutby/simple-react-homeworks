@@ -32,4 +32,4 @@ export const loadingAC = (status: boolean) =>
 /** Types */
 export type ActionsTypes = ReturnType<typeof loadingAC>;
 
-type StateType = typeof initState;
+export type StateType = typeof initState;

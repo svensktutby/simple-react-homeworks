@@ -33,6 +33,6 @@ export const changeThemeAC = (theme: ThemeType) =>
 type ActionsType = ReturnType<typeof changeThemeAC>;
 
 export type ThemeType = 'some' | 'dark' | 'red' | 'default';
-type StateType = {
+export type StateType = {
   theme: ThemeType;
 };
