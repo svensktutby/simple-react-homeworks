@@ -2,25 +2,26 @@ enum ActionType {
   CHANGE_THEME = 'HW/THEME/CHANGE_THEME',
 }
 
-const initState: ThemeStateType = {
+const initState: StateType = {
   theme: 'some',
 };
 
 export const themeReducer = (
   state = initState,
   action: ActionsType,
-): ThemeStateType => {
+): StateType => {
   switch (action.type) {
     case ActionType.CHANGE_THEME: {
       return { ...state, theme: action.payload.theme };
     }
+
     default:
       return state;
   }
 };
 
 /** Actions */
-export const changeThemeC = (theme: ThemeType) =>
+export const changeThemeAC = (theme: ThemeType) =>
   ({
     type: ActionType.CHANGE_THEME,
     payload: {
@@ -29,9 +30,9 @@ export const changeThemeC = (theme: ThemeType) =>
   } as const);
 
 /** Types */
-type ActionsType = ReturnType<typeof changeThemeC>;
+type ActionsType = ReturnType<typeof changeThemeAC>;
 
 export type ThemeType = 'some' | 'dark' | 'red' | 'default';
-type ThemeStateType = {
+type StateType = {
   theme: ThemeType;
 };

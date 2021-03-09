@@ -1,16 +1,18 @@
+enum ActionType {
+  LOADING = 'HW/LOADING/LOADING',
+}
+
 const initState = {
   status: false,
 };
 
-type StateType = typeof initState;
-
 export const loadingReducer = (
   state = initState,
-  action: ActionTypes,
-): StateType => { // fix any
+  action: ActionsTypes,
+): StateType => {// fix any
   switch (action.type) {
-    case 'LOADING': {
-      return { ...state, status: action.payload };
+    case ActionType.LOADING: {
+      return { ...state, status: action.payload.status };
     }
 
     default:
@@ -18,8 +20,16 @@ export const loadingReducer = (
   }
 };
 
-const LOADING = 'LOADING';
-export const loadingAC = (payload: boolean) =>
-  ({ type: LOADING, payload } as const); // fix any
+/** Actions */
+export const loadingAC = (status: boolean) =>
+  ({
+    type: ActionType.LOADING,
+    payload: {
+      status,
+    },
+  } as const); // fix any
 
-export type ActionTypes = ReturnType<typeof loadingAC>;
+/** Types */
+export type ActionsTypes = ReturnType<typeof loadingAC>;
+
+type StateType = typeof initState;

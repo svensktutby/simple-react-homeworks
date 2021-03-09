@@ -11,7 +11,7 @@ type DefaultSelectPropsType = DetailedHTMLProps<
   HTMLSelectElement
 >;
 
-type SuperSelectPropsType = DefaultSelectPropsType & {
+export type SuperSelectPropsType = DefaultSelectPropsType & {
   options?: any[];
   onChangeOption?: (option: any) => void;
 };

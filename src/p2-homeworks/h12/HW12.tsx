@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import s from './HW12.module.css';
 import SuperSelect from '../h7/common/c5-SuperSelect/SuperSelect';
 import { AppStoreType } from '../h10/bll/store';
-import { changeThemeC, ThemeType } from './bll/themeReducer';
+import { changeThemeAC, ThemeType } from './bll/themeReducer';
 
 const themes = ['default', 'dark', 'red', 'some'];
 
@@ -16,7 +16,7 @@ function HW12() {
   const dispatch = useDispatch();
 
   const onChangeCallback = (theme: ThemeType) => {
-    dispatch(changeThemeC(theme));
+    dispatch(changeThemeAC(theme));
   };
 
   return (
