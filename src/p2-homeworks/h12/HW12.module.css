@@ -1,23 +1,43 @@
+.wrapper {
+  composes: wrapperBlock from "../../index.css";
+
+  display: flex;
+  align-items: center;
+}
+
+.themeSelect {
+  max-width: 100px;
+  margin-left: auto;
+}
+
 .dark {
-    background: dimgrey;
+  background: dimgrey;
 }
 
 .dark-text {
-    color: aliceblue;
+  color: aliceblue;
 }
 
 .red {
-    background: lightcoral;
+  background: lightcoral;
 }
 
 .red-text {
-    color: aqua;
+  color: aqua;
 }
 
 .some {
-    background: lightgreen;
+  background: lightgreen;
 }
 
 .some-text {
-    color: darkslateblue;
+  color: darkslateblue;
+}
+
+.default {
+  background: #007bff;
+}
+
+.default-text {
+  color: #fff;
 }
