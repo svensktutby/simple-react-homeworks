@@ -1,11 +1,14 @@
 import React, { FC } from 'react';
 import s from './Preloader.module.css';
 
-export const Preloader: FC = () => {
+type PreloaderPropsType = {
+  text?: string;
+};
+
+export const Preloader: FC<PreloaderPropsType> = ({ text }) => {
   return (
-    <div className={s.loader}>
-      <span>&#123;</span>
-      <span>&#125;</span>
+    <div className={s.wrapper}>
+      <div className={s.loader}>{text}</div>
     </div>
   );
 };

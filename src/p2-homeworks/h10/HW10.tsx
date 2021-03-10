@@ -30,7 +30,7 @@ function HW10() {
       <div className={s.wrapper}>
         {loading ? (
           <div>
-            <Preloader />
+            <Preloader text="LOADING..." />
           </div>
         ) : (
           <div className={s.buttonWrapper}>
