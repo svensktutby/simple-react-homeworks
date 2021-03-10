@@ -1,6 +1,9 @@
 const baseURL = 'https://neko-cafe-back.herokuapp.com/';
 
-export const fetchRequest = async (url = '', options: ApiOptions) => {
+export const fetchRequest = async (
+  url = '',
+  options: ApiOptions,
+): Promise<ResponseType> => {
   const res = await fetch(`${baseURL}${url}`, options);
 
   if (!res.ok) {
@@ -41,4 +44,11 @@ type ApiOptions<B = string> = {
   headers?: Record<string, string>;
   body?: B;
   credentials?: CredentialsType;
+};
+
+export type ResponseType = {
+  errorText: string;
+  info: string;
+  yourBody: Record<string, string>;
+  yourQuery: Record<string, unknown>;
 };

@@ -1,39 +1,47 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import s from './Request.module.css';
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton';
 import SuperCheckbox from '../h4/common/c3-SuperCheckbox/SuperCheckbox';
-import { fetchRequest } from './RequestAPI';
+import { AppStoreType } from '../h10/bll/store';
+import { Preloader } from '../h10/common/Preloader/Preloader';
+import { changeCheckboxStatusAC, fetchDataAsync } from './bll/requestReducer';
 
 export const Request: FC = () => {
-  const [checked, setChecked] = useState(false);
-  const [response, setResponse] = useState('There have not been any requests yet');
+  const status = useSelector<AppStoreType, boolean>(
+    (state) => state.request.status,
+  );
+  const title = useSelector<AppStoreType, string>(
+    (state) => state.request.title,
+  );
+  const loading = useSelector<AppStoreType, boolean>(
+    (state) => state.loading.status,
+  );
+  const dispatch = useDispatch();
 
-  const clickHandler = async () => {
-    const url = 'auth/test';
-    const body = JSON.stringify({ success: checked });
-
-    const options = {
-      method: 'POST' as const,
-      headers: { 'Content-Type': 'application/json' },
-      body,
-    };
-
-    const data = await fetchRequest(url, options);
-    setResponse(data.info)
-    console.log(data);
+  const clickHandler = () => {
+    dispatch(fetchDataAsync(status));
   };
 
-  const changeHandler = (e: ChangeEvent<HTMLInputElement>) =>
-    setChecked(e.currentTarget.checked);
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeCheckboxStatusAC(e.currentTarget.checked));
+  };
 
   return (
     <div className={s.wrapper}>
-      <h3 className={s.response}>{response}</h3>
-      <SuperButton className={s.btn} onClick={clickHandler}>
-        Get data
-      </SuperButton>
-      <SuperCheckbox onChange={changeHandler} />
+      {loading ? (
+        <Preloader text="LOADING..." />
+      ) : (
+        <h3 className={s.title}>{title}</h3>
+      )}
+
+      <div className={s.btnWrapper}>
+        <SuperButton className={s.btn} onClick={clickHandler}>
+          Get data
+        </SuperButton>
+      </div>
+      <SuperCheckbox onChange={changeHandler}>Change status</SuperCheckbox>
     </div>
   );
 };

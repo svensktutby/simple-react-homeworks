@@ -8,7 +8,7 @@ const initState = {
 
 export const loadingReducer = (
   state = initState,
-  action: ActionsTypes,
+  action: ActionsType,
 ): StateType => {// fix any
   switch (action.type) {
     case ActionType.LOADING: {
@@ -30,6 +30,6 @@ export const loadingAC = (status: boolean) =>
   } as const); // fix any
 
 /** Types */
-export type ActionsTypes = ReturnType<typeof loadingAC>;
+export type ActionsType = ReturnType<typeof loadingAC>;
 
 export type StateType = typeof initState;

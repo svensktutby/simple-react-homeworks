@@ -1,11 +1,12 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-
   text-align: center;
 }
 
-.response,
-.btn {
-  margin-bottom: 10px;
+.title {
+  min-height: 50px;
+  margin: 0;
+}
+
+.btnWrapper {
+  padding: 10px 0;
 }
