@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import s from './HW.module.css'
+import s from './HW11.module.css'
 import SuperRange from "./common/c7-SuperRange/SuperRange";
 import SuperDoubleRange from "./common/c8-SuperDoubleRange/SuperDoubleRange";
 
