@@ -37,11 +37,11 @@ export const Request: FC = () => {
       )}
 
       <div className={s.btnWrapper}>
-        <SuperButton className={s.btn} onClick={clickHandler}>
+        <SuperButton className={s.btn} onClick={clickHandler} disabled={loading}>
           Get data
         </SuperButton>
       </div>
-      <SuperCheckbox onChange={changeHandler}>Change status</SuperCheckbox>
+      <SuperCheckbox onChange={changeHandler} disabled={loading}>Change status</SuperCheckbox>
     </div>
   );
 };
